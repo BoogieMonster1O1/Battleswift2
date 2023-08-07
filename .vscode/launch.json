@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "name": "Debug BattleswiftCli",
+            "program": "${workspaceFolder:Battleswift2}/.build/debug/BattleswiftCli",
+            "args": [],
+            "cwd": "${workspaceFolder:Battleswift2}",
+            "preLaunchTask": "swift: Build Debug BattleswiftCli"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "name": "Release BattleswiftCli",
+            "program": "${workspaceFolder:Battleswift2}/.build/release/BattleswiftCli",
+            "args": [],
+            "cwd": "${workspaceFolder:Battleswift2}",
+            "preLaunchTask": "swift: Build Release BattleswiftCli"
+        }
+    ]
+}

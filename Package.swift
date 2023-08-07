@@ -15,9 +15,9 @@ let package = Package(
             targets: ["BattleswiftCli"]),
     ],
     dependencies: [
-        .package(
+      .package(
             url: "https://github.com/christophhagen/BinaryCodable", 
-           from: "1.0.0")
+           from: "2.0.0")
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -25,7 +25,7 @@ let package = Package(
         .target(
             name: "Battleswift",
             dependencies: [
-                .product(name: "BinaryCodable", package: "BinaryCodable")
+                .product(name: "BinaryCodable", package: "BinaryCodable"),
             ]),
         .executableTarget(
             name: "BattleswiftCli"),

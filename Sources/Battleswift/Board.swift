@@ -9,8 +9,8 @@ public struct Board {
         self.cells = Array(repeating: Array(repeating: .empty, count: columns), count: rows)
     }
 
-    convenience init() {
-        self.init(10, 10)
+    public init() {
+        self.init(rows: 10, columns: 10)
     }
 
     private func indexFromLetter(_ letter: Character) -> Int {
@@ -121,7 +121,8 @@ public struct Board {
 
         var columnHeader = "  "
         for column in 0..<size.columns {
-            columnHeader += columnLetters[column] + " "
+            let letter: String = String(columnLetters[columnLetters.index(columnLetters.startIndex, offsetBy: column)])
+            columnHeader += letter + " "
         }
         print(columnHeader)
 

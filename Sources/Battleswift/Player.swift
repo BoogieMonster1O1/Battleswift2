@@ -1,5 +1,4 @@
 import Foundation
-import Battleswift
 
 public class Player {
     var currentGame: Game? = nil
