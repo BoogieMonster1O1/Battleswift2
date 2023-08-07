@@ -8,7 +8,7 @@ public struct PacketDecoder {
         throw PacketDecodingError.invalidPacketInstance
     }
     
-    public static func decode(type: any Packet.Type, data: Data) throws -> any Packet {
-        return try Self.packetDecoder.decode(type, from: data)
+    public static func decode<T: Packet>(type: T.Type, data: Data) throws -> T {
+        return try packetDecoder.decode(type, from: data)
     }
 }
