@@ -3,10 +3,14 @@ import Foundation
 public struct Board {
     private var size: (rows: Int, columns: Int)
     private var cells: [[CellState]]
-
+    
     public init(rows: Int, columns: Int) {
         self.size = (rows, columns)
         self.cells = Array(repeating: Array(repeating: .empty, count: columns), count: rows)
+    }
+
+    convenience init() {
+        self.init(10, 10)
     }
 
     private func indexFromLetter(_ letter: Character) -> Int {
@@ -84,12 +88,12 @@ public struct Board {
             }
         }
 
-        return true // Ship placed successfully
+        return true
     }
 
     mutating func receiveAttack(at row: Int, column: Int) -> CellState {
         guard row >= 0, row < size.rows, column >= 0, column < size.columns else {
-            return .empty // Invalid position, treat it as a miss
+            return .empty // Invalid
         }
 
         let cellState = cells[row][column]
@@ -110,8 +114,21 @@ public struct Board {
     }
 
     func printBoard() {
+        let columnLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+        let maxRowIndex = max(size.rows - 1, 9)
+        let rowPadding = "\(maxRowIndex + 1)".count
+
+        var columnHeader = "  "
+        for column in 0..<size.columns {
+            columnHeader += columnLetters[column] + " "
+        }
+        print(columnHeader)
+
         for row in 0..<size.rows {
-            var rowString = ""
+            let rowIndex = String(format: "%0\(rowPadding)d", row + 1)
+            var rowString = rowIndex + " "
+
             for column in 0..<size.columns {
                 switch cells[row][column] {
                 case .empty:
