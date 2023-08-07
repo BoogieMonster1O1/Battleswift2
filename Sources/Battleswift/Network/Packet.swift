@@ -2,5 +2,12 @@ import Foundation
 import BinaryCodable
 
 public protocol Packet: Codable, Hashable {
-    func encode() -> Int
+}
+
+let packetEncoder: BinaryEncoder = .init()
+
+extension Packet {
+    func encode() throws -> Data {
+        return try packetEncoder.encode(self)
+    }
 }
