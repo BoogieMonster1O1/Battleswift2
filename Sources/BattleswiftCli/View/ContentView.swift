@@ -7,7 +7,7 @@ struct ContentView: View {
         if gameMode == .no {
             MainMenuView() { self.gameMode = $0 }
         } else if gameMode == .singleplayer {
-            SingleplayerView()
+            Text("not implemented")
         } else if gameMode == .lan {
             Text("lan")
         } else if gameMode == .internet {
