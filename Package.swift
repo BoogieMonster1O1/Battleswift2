@@ -27,13 +27,11 @@ let package = Package(
       dependencies: [
         .product(name: "BinaryCodable", package: "BinaryCodable")
       ]),
-    .systemLibrary(name: "Cncurses", pkgConfig: "ncurses"),
     .executableTarget(
       name: "BattleswiftCli",
       dependencies: [
         "Battleswift",
-        .product(name: "SwiftTUI", package: "SwiftTUI"),
-        "Cncurses"
+        .product(name: "SwiftTUI", package: "SwiftTUI")
       ]
     ),
     .testTarget(
