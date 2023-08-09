@@ -8,6 +8,15 @@
         "revision" : "295ca6399b2b01d1aa4fa84d666416f3bf99ffde",
         "version" : "2.0.0"
       }
+    },
+    {
+      "identity" : "swifttui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/BoogieMonster1O1/SwiftTUI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d6c860487a08919e9dade7521c7a226709c0d07e"
+      }
     }
   ],
   "version" : 2
